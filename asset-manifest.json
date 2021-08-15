@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.js": "/onpointslider/static/js/main.3478c29c.chunk.js",
+    "main.js.map": "/onpointslider/static/js/main.3478c29c.chunk.js.map",
+    "runtime-main.js": "/onpointslider/static/js/runtime-main.d846dea4.js",
+    "runtime-main.js.map": "/onpointslider/static/js/runtime-main.d846dea4.js.map",
+    "static/js/2.fc12c6ab.chunk.js": "/onpointslider/static/js/2.fc12c6ab.chunk.js",
+    "static/js/2.fc12c6ab.chunk.js.map": "/onpointslider/static/js/2.fc12c6ab.chunk.js.map",
+    "index.html": "/onpointslider/index.html",
+    "static/js/2.fc12c6ab.chunk.js.LICENSE.txt": "/onpointslider/static/js/2.fc12c6ab.chunk.js.LICENSE.txt",
+    "static/media/1stSlideBG.553b2461.png": "/onpointslider/static/media/1stSlideBG.553b2461.png",
+    "static/media/2ndIce.41f3816f.png": "/onpointslider/static/media/2ndIce.41f3816f.png",
+    "static/media/2ndSlideBG.a7f3c148.png": "/onpointslider/static/media/2ndSlideBG.a7f3c148.png",
+    "static/media/3rdIce.1d977c14.png": "/onpointslider/static/media/3rdIce.1d977c14.png",
+    "static/media/3rdSlideBG.896bb96d.png": "/onpointslider/static/media/3rdSlideBG.896bb96d.png",
+    "static/media/4rthIce.9efedd37.png": "/onpointslider/static/media/4rthIce.9efedd37.png",
+    "static/media/6thIce.c1a2c1cc.png": "/onpointslider/static/media/6thIce.c1a2c1cc.png",
+    "static/media/7thIce.808458e2.png": "/onpointslider/static/media/7thIce.808458e2.png",
+    "static/media/GothamProLight.ac4d82c6.ttf": "/onpointslider/static/media/GothamProLight.ac4d82c6.ttf",
+    "static/media/GothamProMedium.a9012c00.ttf": "/onpointslider/static/media/GothamProMedium.a9012c00.ttf",
+    "static/media/GothamProRegular.460892a7.ttf": "/onpointslider/static/media/GothamProRegular.460892a7.ttf",
+    "static/media/Lato-Bold.08ce961f.ttf": "/onpointslider/static/media/Lato-Bold.08ce961f.ttf",
+    "static/media/Lato-Medium.b56347b7.ttf": "/onpointslider/static/media/Lato-Medium.b56347b7.ttf",
+    "static/media/Lato-Regular.faacec1c.ttf": "/onpointslider/static/media/Lato-Regular.faacec1c.ttf",
+    "static/media/Lato-Semibold.637ae3cb.ttf": "/onpointslider/static/media/Lato-Semibold.637ae3cb.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d846dea4.js",
+    "static/js/2.fc12c6ab.chunk.js",
+    "static/js/main.3478c29c.chunk.js"
+  ]
+}
