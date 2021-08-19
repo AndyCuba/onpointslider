@@ -7,7 +7,6 @@ const ThirdSlideSecondScreen = () => {
         <ThirdSlideSecondScreenWrapper
             id='thirdSlideSecondScreen'
         >
-            <p>221312312312312</p>
         </ThirdSlideSecondScreenWrapper>
     );
 };

@@ -1,9 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
 import mainBG from '../../images/1stSlideBG.png';
-import ellipseBG from '../../images/ellipseBG.png';
-import ellipseCore from '../../images/ellipseCore.png';
-import ellipseRing from '../../images/ellipseRing.png';
 import footerArrow from '../../images/footerArrow.png';
 
 
@@ -11,20 +8,19 @@ import footerArrow from '../../images/footerArrow.png';
 const scaleUpRing = keyframes`
     from {
         transform: scale(1.0);
-        background: url(${ellipseRing}) center/cover;
     }
     to {
-        transform: scale(3.24);
-        background: url(${ellipseBG}) center/cover;
+        transform: scale(3.2);
+        
     }
 `;
 
 const scaleUpCore = keyframes`
     from {
-        transform: scale(1.0); 
+        transform: scale(1.0);
     }
     to {
-        transform: scale(5);
+        transform: scale(8);
     }
 `;
 
@@ -56,30 +52,37 @@ const FirstSlideWrapper = styled.div`
 
 const Ellipse = styled.div`
     transform: scale(${props => props.scale});
-    position: absolute;
+    position: relative;
     top: ${props => props.top}px;
     left: ${props => props.left}px;
-    width: 53.5px;
-    height: 53.5px;
-    background: url(${ellipseBG}) center/cover;
+    width: 53px;
+    height: 53px;
+    border: 1px solid #d01a36;
+    background-color: rgba(247, 139, 31, 0.22);
     display: flex;
     justify-content: center;
     align-items: center;
-    div {
+    border-radius: 50%;   
+    div:first-child {
         width: 16.5px;
         height: 16.5px;
-        background: url(${ellipseRing}) center/cover;
         animation: 2s infinite ${scaleUpRing} linear;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        div {
-            width: 2px;
-            height: 2px;
-            background: url(${ellipseCore}) center/cover;
-            animation: 2s infinite ${scaleUpCore} linear;
-        }
+        background: #b49e91;
+        border: 0.5px solid #d01a36;
+        border-radius: 50%;
     }
+    div:last-child {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-image: -moz-radial-gradient( 50% 50%, circle closest-side, rgb(222,121,27) 1%, rgb(207,20,55) 100%);
+        background-image: -webkit-radial-gradient( 50% 50%, circle closest-side, rgb(222,121,27) 1%, rgb(207,20,55) 100%);
+        background-image: -ms-radial-gradient( 50% 50%, circle closest-side, rgb(222,121,27) 1%, rgb(207,20,55) 100%);
+        border: none;
+        border-radius: 50%;
+        animation: 2s infinite ${scaleUpCore} linear;
+    } 
+    
 `;
 
 const EllipseTitle = styled.h2`

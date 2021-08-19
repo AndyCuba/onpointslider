@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15.998" height="15.998" viewBox="0 0 81.5 81.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f78b1f;
+        fill-opacity: 0.22;
+        stroke-linecap: round;
+        stroke-width: 2px;
+        stroke: url(#linear-gradient);
+        filter: url(#filter);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="40.75" y1="80.5" x2="40.75" y2="1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#de791b"/>
+      <stop offset="0.005" stop-color="#de791b"/>
+      <stop offset="1" stop-color="#cf1437"/>
+    </linearGradient>
+    <filter id="filter" x="0" y="0" width="81.5" height="81.5" filterUnits="userSpaceOnUse">
+      <feImage preserveAspectRatio="none" x="1" y="1" width="79.5" height="79.5" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNzkuNSIgaGVpZ2h0PSI3OS41IiB2aWV3Qm94PSIwIDAgNzkuNSA3OS41Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBvcGFjaXR5OiAwLjE2OwogICAgICAgIGZpbGw6IHVybCgjcmFkaWFsLWdyYWRpZW50KTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0icmFkaWFsLWdyYWRpZW50IiBjeD0iMzkuNzUiIGN5PSIzOS43NSIgcj0iNDEuMTUyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2RlNzkxYiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMDA3IiBzdG9wLWNvbG9yPSIjZGU3OTFiIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMS4yOCIgc3RvcC1jb2xvcj0iI2NmMTQzNyIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNzkuNSIgaGVpZ2h0PSI3OS41Ii8+Cjwvc3ZnPgo="/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g style="fill: #f78b1f; filter: url(#filter)">
+    <circle id="Ellipse_2_copy_2" data-name="Ellipse 2 copy 2" class="cls-1" cx="40.75" cy="40.75" r="39.75" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use xlink:href="#Ellipse_2_copy_2" style="stroke: url(#linear-gradient); filter: none; fill: none"/>
+</svg>

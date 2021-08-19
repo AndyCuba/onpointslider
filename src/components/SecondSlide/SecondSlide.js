@@ -9,12 +9,12 @@ import FourthIce from '../../images/4rthIce.png';
 
 
 const SecondSlide = (props) => {
-    const { onTouchStart, onTouchEnd } = props;
+    const { onTouchWindowStart, onTouchWindowEnd } = props;
 
     return(
         <SecondSlideWrapper 
-            onTouchStart={onTouchStart} 
-            onTouchEndCapture={onTouchEnd}
+            onTouchStart={onTouchWindowStart} 
+            onTouchEndCapture={onTouchWindowEnd}
             id='secondSlide'
         >
             <h2>Основа терапии - патогенез СД2</h2>

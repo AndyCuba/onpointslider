@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import {  
     Slider,
@@ -12,33 +12,38 @@ import ThirdSlideSecondScreen from '../ThirdSlideSecondScreen/ThirdSlideSecondSc
 import Scrollbar from '../Scrollbar/Scrollbar';
 
 const ThirdSlide = (props) => {
-    const { onTouchStart, onTouchEnd } = props;
+    const { onTouchWindowStart, onTouchWindowEnd } = props;
     const container = useRef(null);
     const viewport = useRef(null);
     const contentBox = useRef(null);
     const scrollerThumb = useRef(null);
+    const firstSlide = 'firstSlide';
+    const secondSlide = 'secondSlide';
+    const thirdSlide = 'thirdSlide';
+    const [currentSlide, setSlide] = useState(thirdSlide);
+    const [offset, setOffset] = useState(null);
 
     const onInit = () => {
-        const viewportWidth = viewport.current.offsetWidth,
-            ratio = viewportWidth / 3500,
-            scroller = scrollerThumb.current,
-            scrollbarFilling = scroller.previousElementSibling;
+        const viewportWidth = viewport.current.offsetWidth;
+        const ratio = viewportWidth / 3500;
+        const scroller = scrollerThumb.current;
+        const scrollbarFilling = scroller.previousElementSibling;
 
         let isScrollThumbPressed = false;
         let startX = 830;
         let shiftContent;
 
-        contentBox.current.scrollTo(2048, 0);
-
-        const handleTouchStart = (e) => {
+        //sets start X position
+        const handleScrollTouchStart = (e) => {
             startX = e.touches[0].clientX;
             isScrollThumbPressed = true;
         };
         
-        const handleTouchMove = (e) => {
- 
+        const handleScrollTouchMove = (e) => {
+            
             if (isScrollThumbPressed === false) return;
 
+            //sets clientX or max possible number of clientX
             const clientX = e.touches[0].clientX > 830 ? 830 : e.touches[0].clientX;
             shiftContent = scroller.offsetLeft / ratio;
 
@@ -58,54 +63,71 @@ const ThirdSlide = (props) => {
             startX = clientX;
         }; 
 
-        const handleTouchEnd = () => {
+        // sets slide depending on scroller offset
+        const handleScrollTouchEnd = () => {
+
             isScrollThumbPressed = false;
 
-            if(shiftContent >= 1400) {
-                contentBox.current.scrollTo({ left: 2048, behavior: 'smooth'});
-                scroller.style.left = '620px';
-            } else if(shiftContent >= 700) {
-                contentBox.current.scrollTo({ left: 1024, behavior: 'smooth'});
-                scroller.style.left = '310px';
-            } else if(shiftContent >= 0){ 
-                contentBox.current.scrollTo({ left: 0, behavior: 'smooth'});
-                scroller.style.left = '0px';
+            const scrollerOffset = scroller.offsetLeft;
+            
+            if(scrollerOffset >= 415) {
+                setSlide(thirdSlide);
+            } else if(scrollerOffset >= 170) {
+                setSlide(secondSlide);
+            } else if(scrollerOffset >= 0) { 
+                setSlide(firstSlide);
             } else {
-                contentBox.current.scrollTo({ left: 2048, behavior: 'smooth'});
-                scroller.style.left = '620px';
+                setSlide(thirdSlide);
             };
-            scrollbarFilling.style.width = scroller.style.left;
+
+            setOffset(scrollerOffset);
         };
        
-        contentBox.current.addEventListener('scroll', () => {
+        // moves scroll thumb and scrollbar filling after scroll event
+        const handleScroll = () => {
             scroller.style.left = (contentBox.current.scrollLeft * ratio) + 'px';
-        });
+            scrollbarFilling.style.width = scroller.style.left;
+        };
 
-        scroller.addEventListener('touchstart', handleTouchStart);
+        contentBox.current.addEventListener('scroll', handleScroll);
 
-        document.addEventListener('touchmove', handleTouchMove);
+        scroller.addEventListener('touchstart', handleScrollTouchStart);
 
-        document.addEventListener('touchend', handleTouchEnd);
+        container.current.addEventListener('touchmove', handleScrollTouchMove);
+
+        container.current.addEventListener('touchend', handleScrollTouchEnd);
     };
 
     useEffect(() => {
         onInit();
     }, []);
 
+    // Scrolls to X position depending on the current slide
+    useEffect(() => {
+        if(currentSlide === firstSlide) {
+            contentBox.current.scrollTo({ left: 0, behavior: 'smooth'});
+        } else if(currentSlide === secondSlide) {
+            contentBox.current.scrollTo({ left: 1024, behavior: 'smooth'});
+        } else if(currentSlide === thirdSlide) {
+            contentBox.current.scrollTo({ left: 2048, behavior: 'smooth'});
+        }; 
+    }, [currentSlide, offset]);
+
     return(
         <ThirdSlideWrapper 
-            onTouchStart={onTouchStart} 
-            onTouchEndCapture={onTouchEnd}
+            onTouchStart={onTouchWindowStart} 
+            onTouchEndCapture={onTouchWindowEnd}
             id='thirdSlide'
             ref={container}
         >   
-            <Slider ref={viewport}>
+            <Slider 
+                ref={viewport}  
+            >
                 <SliderTrack ref={contentBox}>
                     <ThirdSlideFirstScreen />
                     <ThirdSlideSecondScreen />
                     <ThirdSlideThridScreen />
-                </SliderTrack>
-                
+                </SliderTrack>              
             </Slider>
             <Scrollbar ref={scrollerThumb}/>
         </ThirdSlideWrapper>

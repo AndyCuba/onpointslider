@@ -66,6 +66,10 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const AppWrapper = styled.div`
+  overflow: hidden;
+`;
+
 const SliderThumbler = styled.div`
   width: 13.5px;
   height: 50px;
@@ -106,6 +110,7 @@ const IceCube = styled.div`
 
 export { 
   GlobalStyle, 
+  AppWrapper,
   SliderThumbler,
   IceCube
 };

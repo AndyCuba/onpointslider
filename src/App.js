@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import FirstSlide from './components/FirstSlide/FirstSlide';
 import SecondSlide from './components/SecondSlide/SecondSlide';
 import ThirdSlide from './components/ThirdSlide/ThirdSlide';
-import { GlobalStyle, SliderThumbler } from './style';
+import { AppWrapper, GlobalStyle, SliderThumbler } from './style';
 
 const App = () => {
     const [startY, setStartY] = useState(0);
@@ -27,13 +27,13 @@ const App = () => {
     useEffect(() => {
         if(startY - endY > 250) {
             if(currentSlide === firstSlide) {
-                setCurrentSlide(secondSlide)
+                setCurrentSlide(secondSlide);
             } else if(currentSlide === secondSlide) {
                 setCurrentSlide(thirdSlide);
             };
         } else if(startY - endY < -250) {
             if(currentSlide === secondSlide) {
-                setCurrentSlide(firstSlide)
+                setCurrentSlide(firstSlide);
             } else if(currentSlide === thirdSlide) {
                 setCurrentSlide(secondSlide);
             };
@@ -49,10 +49,10 @@ const App = () => {
         } else if(currentSlide === thirdSlide) {
             window.scrollTo({top: 1536, behavior: 'smooth'});
         };
-    }, [currentSlide])
+    }, [currentSlide]);
 
     return(
-        <div>
+        <AppWrapper>
             <GlobalStyle />
             <SliderThumbler current={currentSlide}>
                 <div onClick={() => setCurrentSlide(firstSlide)}></div>
@@ -60,21 +60,21 @@ const App = () => {
                 <div onClick={() => setCurrentSlide(thirdSlide)}></div>
             </SliderThumbler>
             <FirstSlide 
-                onTouchStart={handleTouchStart} 
-                onTouchEnd={handleTouchEnd}
+                onTouchWindowStart={handleTouchStart} 
+                onTouchWindowEnd={handleTouchEnd}
                 currentSlide={currentSlide}
             />
             <SecondSlide 
-                onTouchStart={handleTouchStart} 
-                onTouchEnd={handleTouchEnd}
+                onTouchWindowStart={handleTouchStart} 
+                onTouchWindowEnd={handleTouchEnd}
                 currentSlide={currentSlide}
             />
             <ThirdSlide 
-                onTouchStart={handleTouchStart} 
-                onTouchEnd={handleTouchEnd}
+                onTouchWindowStart={handleTouchStart} 
+                onTouchWindowEnd={handleTouchEnd}
                 currentSlide={currentSlide}
             />
-        </div>
+        </AppWrapper>
     );
 };
 
